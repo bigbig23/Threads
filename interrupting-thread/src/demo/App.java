@@ -1,0 +1,43 @@
+package demo;
+
+import java.util.Random;
+
+public class App {
+
+	public static void main(String[] args) throws InterruptedException {
+ 
+		System.out.println("Starting...");
+		
+		Thread t1 = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				Random rnd = new Random();
+				for(int i =0;i<1E8;i++) { //E correspond to num of 0 
+					
+					if(Thread.currentThread().isInterrupted()){
+						System.out.println("interrupted ..");
+						break;
+					}
+					
+					
+					Math.sinh(rnd.nextDouble());
+					
+				}
+
+			}
+			
+		});
+		
+		t1.start();
+		Thread.sleep(4000);
+		t1.interrupt();//but it's deprecated,so we must add if condition to get the current thread and call the interrupution
+		
+		
+		t1.join();
+		
+		System.out.println("finished...");
+
+	}
+
+}

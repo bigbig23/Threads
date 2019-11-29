@@ -1,0 +1,14 @@
+package demo1;
+
+import java.util.concurrent.Semaphore;
+
+public class App {
+
+	public static void main(String[] args) {
+ 
+		Semaphore sem = new Semaphore(1); //1 is the number of permits
+		
+		System.out.println("Permits avaiable : " + sem);
+	}
+
+}

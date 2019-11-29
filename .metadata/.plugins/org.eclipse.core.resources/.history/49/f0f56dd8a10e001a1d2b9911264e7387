@@ -1,0 +1,19 @@
+package demo1;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Runner {
+ 
+	
+	public void firstThread() {
+	 
+	}
+	
+	public void secondThread() {
+	}
+
+
+	
+	
+}

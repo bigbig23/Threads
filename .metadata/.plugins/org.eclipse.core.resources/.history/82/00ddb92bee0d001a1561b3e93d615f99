@@ -1,0 +1,26 @@
+package demo1;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+ 
+public class Processor {
+	public LinkedList<Integer> list = new LinkedList<Integer>();
+	final int LIMIT = 10;
+	Object lock = new Object();
+
+	
+	public void produce() throws InterruptedException {
+		synchronized(lock) {
+			
+		}
+	}
+	
+	public void consume() throws InterruptedException {
+		Scanner scan = new Scanner(System.in);
+ 		synchronized(lock) {
+ 
+ 		}
+	}
+
+}

@@ -1,0 +1,42 @@
+package test;
+
+import java.util.concurrent.CountDownLatch;
+
+class Processor implements Runnable{
+	private CountDownLatch latch;
+	public Processor(CountDownLatch latch) {
+		this.latch = latch;
+	}
+	@Override
+	public void run() {
+ 		System.out.println("Started ...");
+ 		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 		latch.countDown();
+	}
+	
+	
+	
+}
+ 
+
+
+
+
+public class TestApp {
+	
+	public static void main(String[] args) {
+ 
+ 
+ 
+	 
+	 
+		
+	}
+
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;demo1&apos; to &apos;re-entrant-locks/src/demo1&apos;&#x0A;- Original project: &apos;re-entrant-locks&apos;&#x0A;- Destination element: &apos;re-entrant-locks/src/demo1&apos;&#x0A;- Original element: &apos;re-entrant-locks/src/demo1&apos;" description="Copy package" destination="/src&lt;demo1" element1="/src&lt;demo1" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1574586223343" version="1.0"/>
+</session>

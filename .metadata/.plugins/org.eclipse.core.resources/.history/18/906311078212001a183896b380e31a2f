@@ -1,0 +1,44 @@
+package demo1;
+
+import java.util.LinkedList;
+import java.util.Random;
+
+public class Processor {
+	public LinkedList<Integer> list = new LinkedList<Integer>();
+	final int LIMIT = 10;
+	Object lock = new Object();
+
+	public void produce() throws InterruptedException {
+		while (true) {
+			int value = 0;
+			synchronized (lock) {
+				while (list.size() == LIMIT) {
+					wait();
+				}
+				list.add(value++);
+				lock.notify();
+			}
+		}
+
+	}
+
+	public void consume() throws InterruptedException {
+		Random rnd = new Random();
+		while (true) {
+			synchronized (lock) {
+				while (list.size() == 0) {
+					wait();
+				}
+				System.out.println("list size : " + list.size());
+				int value = list.removeFirst();
+				System.out.println("; value : " + value);
+				//lock.notify();
+			}
+
+			Thread.sleep(rnd.nextInt(1000));
+
+		}
+
+	}
+
+}

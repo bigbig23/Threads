@@ -1,0 +1,29 @@
+package demo1;
+
+import java.util.Scanner;
+
+//here we r using low level technique
+public class Processor {
+	
+	public void produce() throws InterruptedException {
+		synchronized(this) {
+			System.out.println("Started running ..... ");
+			wait();
+			System.out.println("Resumed ....."); //it' waiting to be triggered by notify()
+			//release the lock
+		}
+	}
+	
+	public void consume() throws InterruptedException {
+		Scanner scan = new Scanner(System.in);
+ 		synchronized(this) {
+			Thread.sleep(2000); //sleeping 2 seconds
+			System.out.println("Waiting for return key ..... ");
+			scan.nextLine();
+			notify(); //wake wait() to resume;
+			System.out.println("Wakeing up a waiting thread by triggering wait() key");
+			Thread.sleep(5000); 
+ 		}
+	}
+
+}

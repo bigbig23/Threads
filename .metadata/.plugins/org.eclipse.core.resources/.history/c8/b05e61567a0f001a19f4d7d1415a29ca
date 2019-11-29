@@ -1,0 +1,15 @@
+package demo1;
+
+import java.util.concurrent.Semaphore;
+
+public class App {
+
+	public static void main(String[] args) throws InterruptedException {
+ 
+		Semaphore sem = new Semaphore(1); //1 is the number of permits
+		sem.release();
+		sem.acquire();//increments
+		System.out.println("Permits avaiable : " + sem.availablePermits());
+	}
+
+}

@@ -1,0 +1,44 @@
+package test;
+
+import java.util.Scanner;
+
+class process extends Thread{
+	public static boolean running = true;
+	public void run() {
+		while(running) {
+			System.out.println("Hello Raed...");
+		}
+	}
+	
+	public void shutdown() {
+		running =false;
+	}
+
+
+}
+
+
+
+
+
+public class TestApp {
+
+	public static void main(String[] args) throws Exception {
+ 
+
+		Scanner sc = new Scanner(System.in);
+	
+		System.out.println("Press return to stop ...");
+		process t1 = new process();
+		t1.start();
+	
+		t1.shutdown();
+	 
+		
+	 
+	 
+		
+	}
+
+
+}

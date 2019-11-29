@@ -1,0 +1,39 @@
+package test;
+
+import java.util.Scanner;
+ 
+class runner extends Thread{
+	boolean runing = true;
+	public void run() {
+	
+		while(runing) {
+			System.out.println("Hello ...");
+		}
+		
+	}
+	public void stopIt() {
+		runing = false;
+	}
+}
+
+public class TestApp {
+	 
+	public static void main(String[] args) throws InterruptedException {
+		runner r = new runner();
+		Thread t1 = new Thread(new runner());
+		
+		t1.start();
+		
+		System.out.println("pres return key to stop the method");
+		new Scanner(System.in).nextLine();
+		r.stopIt();
+
+ 
+	 
+	}
+	 
+	
+	
+	
+
+}
